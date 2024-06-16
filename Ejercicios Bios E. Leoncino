@@ -1,0 +1,125 @@
+// Reto 1
+// Crear un archivo nuevo JS para resolver el siguiente problema:
+
+// Una agencia de carros paga a su personal de ventas un salario base de 500.000 $.
+//  más una comisión de 200.000 $. por cada automóvil vendido, // más el 10% del valor total
+//  de las ventas. Si se tiene como entrada el nombre del vendedor, el número de autos vendidos
+//  y el valor total de sus ventas. /Se pide calcular e imprimir el salario neto del vendedor.
+
+// Datos de entrada
+{
+  let nombreVendedor = "Enzo Ferrari";
+  let autosVendidos = 5;
+  let valorTotalVentas = 3000000; // Valor total de las ventas
+
+  // Salario base
+  const salarioBase = 500000; // Valor del salario
+
+  // Comisión total por autos vendidos
+  const comisionPorAuto = 200000;
+  let comisionTotal = autosVendidos * comisionPorAuto;
+
+  // Porcentaje del valor total de las ventas
+  let porcentajeVentas = valorTotalVentas * 0.1;
+
+  // Salario neto
+  let salarioNeto = salarioBase + comisionTotal + porcentajeVentas;
+
+  // Imprimir el salario neto
+  console.log("RETO1");
+
+  console.log(`El salario neto de ${nombreVendedor} es: $${salarioNeto}`);
+}
+
+// Reto 2
+
+// Crear un archivo nuevo JS para resolver el siguiente problema:
+// Una compañía dedicada a la venta de vehículos ofrece a sus clientes el siguiente sistema de pago:
+// Una cuota inicial del 30% del costo del vehículo y la diferencia debe ser cancelada en cuotas mensuales
+// iguales y consecutivas durante 2 años. Cuando un cliente compra un vehículo la compañía requiere un informe
+//  que contenga:
+// a.- Nombre del cliente.
+// b.- Cuota inicial.
+// c.- Monto de las cuotas mensuales.
+// Como dato de entrada se tiene nombre del cliente y precio del vehículo.
+
+{
+  // Datos de entrada
+  const nombreDelCliente = "Henry Ford";
+  const precioDelVehiculo = 200000;
+  //Cuota Inicial del 30% del valor total
+  const cuotaInicial = precioDelVehiculo * 0.3;
+
+  // Valor cuotas mensuales por un total de 23 meses, tomando el pago inicial del 30% como la primer cuota.
+  const valorCuotas = Math.round((precioDelVehiculo - cuotaInicial) / 23);
+
+  // Informe venta de vehiculo.
+  informePorVenta = (nombreDelCliente, cuotaInicial, valorCuotas) => {
+    console.log("Informe por venta:");
+    console.log(`Nombre del cliente: ${nombreDelCliente}`);
+    console.log(`Cuota Inicial: $${cuotaInicial}`);
+    console.log(`Monto cuota mensual: $${valorCuotas}`);
+  };
+  console.log("RETO2");
+
+  informePorVenta(nombreDelCliente, cuotaInicial, valorCuotas);
+}
+
+// Reto 3
+
+// Crear un archivo nuevo JS para resolver el siguiente problema:
+// Un kiosco de comida rápida desea procesar las ventas del día. Para ello dispone de los siguientes datos:
+//  precio del desayuno, almuerzo y cena respectivamente y cantidad de desayunos, almuerzos y cenas vendidos
+//  durante el día. Elabore el programa que permita imprimir: ingreso del kiosco por cada tipo de comida
+//  (desayuno, almuerzo y cena), Total ingreso del día y promedio de los precios de las comidas.
+
+{
+  //Valores de entrada.
+  const desayunosVendidos = 10;
+  const almuerzosVendidos = 10;
+  const cenasVendidos = 10;
+
+  // Valores de la comida
+  const precioDelDesayuno = 1000;
+  const precioAlmuerzo = 3000;
+  const precioCena = 3000;
+
+  // Variables para el informe del Kiosco
+  const ingresosPorDesayunos = precioDelDesayuno * desayunosVendidos;
+  const ingresosPorAlmuerzos = precioAlmuerzo * almuerzosVendidos;
+  const ingresosPorCena = precioCena * cenasVendidos;
+
+  // Calculo Ingresos diarios.
+  const totalIngresos =
+    ingresosPorDesayunos + ingresosPorAlmuerzos + ingresosPorCena;
+
+  // Promedio de precios de las comidas:
+  const promedioPrecios = Math.round(
+    (precioDelDesayuno + precioAlmuerzo + precioCena) / 3
+  );
+
+  // Balance Kiosco.
+  balanceKiosco = (
+    ingresosPorDesayunos,
+    ingresosPorAlmuerzos,
+    ingresosPorCena,
+    totalIngresos,
+    promedioPrecios
+  ) => {
+    console.log("Balance diario del KIOSCO MARIANA.");
+    console.log(`Ingresos por desayunos: $${ingresosPorDesayunos}`);
+    console.log(`Ingresos por almuerzos: $${ingresosPorAlmuerzos}`);
+    console.log(`Ingresos por cenas: $${ingresosPorCena}`);
+    console.log(`Ingreso total : $${totalIngresos}`);
+    console.log(`Precio promedio de las comidas: $${promedioPrecios}`);
+  };
+  console.log("RETO3");
+
+  balanceKiosco(
+    ingresosPorDesayunos,
+    ingresosPorAlmuerzos,
+    ingresosPorCena,
+    totalIngresos,
+    promedioPrecios
+  );
+}
